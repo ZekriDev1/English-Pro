@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite English | Master the Language</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Style.css" >
+</head>
+<body>
+
+    <div id="scroll-progress" style="position: fixed; top: 0; left: 0; height: 4px; background: var(--secondary); z-index: 1002; width: 0%;"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo gradient-text">
+                <i class="fas fa-graduation-cap"></i> <span data-i18n="logo">EnglishPro</span>
+            </a>
+            
+            <div style="display: flex; gap: 15px; align-items: center;">
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home" class="nav-link active" data-i18n="nav_home">Home</a></li>
+                    <li><a href="#about" class="nav-link" data-i18n="nav_about">About</a></li>
+                    <li><a href="#services" class="nav-link" data-i18n="nav_services">Services</a></li>
+                    <li><a href="#pricing" class="nav-link" data-i18n="nav_pricing">Pricing</a></li>
+                    <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+                    
+                    <li style="display:flex; align-items:center; gap: 10px;">
+                        <div class="lang-switcher">
+                            <i class="fas fa-globe"></i> <span id="current-lang">EN</span>
+                            <div class="lang-options">
+                                <div class="lang-option" onclick="changeLanguage('en')">English</div>
+                                <div class="lang-option" onclick="changeLanguage('fr')">Français</div>
+                                <div class="lang-option" onclick="changeLanguage('ar')">العربية</div>
+                            </div>
+                        </div>
+                        <div class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-bg-shape shape-1"></div>
+        <div class="hero-bg-shape shape-2"></div>
+        
+        <div class="container hero-content">
+            <div class="hero-text reveal">
+                <h1 data-i18n="hero_title">Speak English with <br><span class="typing-text"></span></h1>
+                <p data-i18n="hero_subtitle">Unlock your potential with personalized English lessons designed to boost your confidence and career globally.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-primary"><span data-i18n="btn_book">Book a Lesson</span> <i class="fas fa-arrow-right"></i></a>
+                    <a href="#video-intro" class="btn btn-outline"><i class="fas fa-play"></i> <span data-i18n="btn_trial">Free Trial</span></a>
+                </div>
+            </div>
+            <div class="hero-image reveal">
+                <div class="hero-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Professional English Teacher">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding">
+        <div class="container about-content">
+            <div class="about-image reveal">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Teaching">
+                <div class="exp-badge">
+                    <span class="exp-number" data-target="10">0</span>
+                    <span data-i18n="exp_years">Years Experience</span>
+                </div>
+            </div>
+            <div class="about-text reveal">
+                <h4 class="gradient-text" data-i18n="about_heading">About Me</h4>
+                <h2 data-i18n="about_title">Your Partner in Language Mastery</h2>
+                <p style="color: var(--text-muted); margin-bottom: 20px;" data-i18n="about_desc">
+                    I am a certified TEFL teacher specializing in Business English and Conversational fluency. My methodology focuses on real-world application, ensuring you don't just learn rules, but learn to communicate effectively.
+                </p>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <i class="fas fa-user-graduate"></i>
+                        <span class="stat-count" data-target="500">0</span>+
+                        <span data-i18n="stat_students">Students</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-globe"></i>
+                        <span class="stat-count" data-target="20">0</span>+
+                        <span data-i18n="stat_countries">Countries</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-star"></i>
+                        <span class="stat-count" data-target="98">0</span>%
+                        <span data-i18n="stat_success">Success</span>
+                    </div>
+                </div>
+
+                <div class="skills">
+                    <div class="skill-bar">
+                        <div class="skill-info"><span data-i18n="skill_speaking">Speaking</span><span>95%</span></div>
+                        <div class="progress-bg"><div class="progress-fill" style="width: 95%"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info"><span data-i18n="skill_business">Business English</span><span>90%</span></div>
+                        <div class="progress-bg"><div class="progress-fill" style="width: 90%"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info"><span data-i18n="skill_exam">IELTS Prep</span><span>88%</span></div>
+                        <div class="progress-bg"><div class="progress-fill" style="width: 88%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-padding" style="background: var(--bg-body);">
+        <div class="container">
+            <div class="section-header reveal">
+                <h4 class="gradient-text" data-i18n="services_heading">Services</h4>
+                <h2 data-i18n="services_title">How I Can Help You</h2>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card glass reveal">
+                    <div class="icon-box"><i class="fas fa-comments"></i></div>
+                    <h3 data-i18n="serv1_title">Conversation Practice</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px;" data-i18n="serv1_desc">Improve your fluency and reduce accent with guided daily conversations.</p>
+                </div>
+                <div class="service-card glass reveal">
+                    <div class="icon-box"><i class="fas fa-briefcase"></i></div>
+                    <h3 data-i18n="serv2_title">Business English</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px;" data-i18n="serv2_desc">Master email writing, presentations, and corporate vocabulary.</p>
+                </div>
+                <div class="service-card glass reveal">
+                    <div class="icon-box"><i class="fas fa-file-alt"></i></div>
+                    <h3 data-i18n="serv3_title">Exam Preparation</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px;" data-i18n="serv3_desc">Strategic coaching for IELTS, TOEFL, and Cambridge exams.</p>
+                </div>
+                <div class="service-card glass reveal">
+                    <div class="icon-box"><i class="fas fa-child"></i></div>
+                    <h3 data-i18n="serv4_title">Kids Classes</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px;" data-i18n="serv4_desc">Fun and interactive sessions designed specifically for young learners.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="section-padding">
+        <div class="container">
+            <div class="section-header reveal">
+                <h4 class="gradient-text" data-i18n="pricing_heading">Pricing</h4>
+                <h2 data-i18n="pricing_title">Choose Your Plan</h2>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="price-card glass reveal">
+                    <h3 data-i18n="plan1_name">Trial</h3>
+                    <div class="price">150DH<span data-i18n="per_lesson">/lesson</span></div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="plan1_f1">45 Minute Lesson</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="plan1_f2">Assessment</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="plan1_f3">Basic Materials</span></li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline" data-i18n="btn_book_now">Book Now</a>
+                </div>
+
+                <div class="price-card glass popular reveal">
+                    <div class="popular-badge" data-i18n="badge_popular">Most Popular</div>
+                    <h3 data-i18n="plan2_name">Standard</h3>
+                    <div class="price">500DH<span data-i18n="per_10lessons">/10 lessons</span></div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="plan2_f1">60 Minute Lessons</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="plan2_f2">Custom Curriculum</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="plan2_f3">Homework Checks</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="plan2_f4">Recording Access</span></li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" data-i18n="btn_start">Start Learning</a>
+                </div>
+
+                <div class="price-card glass reveal">
+                    <h3 data-i18n="plan3_name">Intensive</h3>
+                    <div class="price">900DH<span data-i18n="per_20lessons">/20 lessons</span></div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="plan3_f1">Priority Scheduling</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="plan3_f2">24/7 WhatsApp Support</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="plan3_f3">Business Edit Service</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-i18n="plan3_f4">Progress Reports</span></li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline" data-i18n="btn_premium">Go Premium</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background: rgba(79, 70, 229, 0.03);">
+        <div class="container">
+            <div class="section-header reveal">
+                <h4 class="gradient-text" data-i18n="testi_heading">Testimonials</h4>
+                <h2 data-i18n="testi_title">Student Stories</h2>
+            </div>
+            
+            <div class="slider-container" style="overflow: hidden; max-width: 800px; margin: 0 auto; padding: 20px;">
+                <div class="slider-track" id="slider-track" style="display: flex; transition: transform 0.5s ease-in-out;">
+                    <div class="slide" style="min-width: 100%; padding: 20px;">
+                        <div class="testimonial-card glass" style="padding: 40px; border-radius: 24px; text-align: center;">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px; border: 3px solid var(--primary);">
+                            <div class="stars" style="color: #F59E0B; margin-bottom: 15px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="quote" style="font-size: 1.1rem; font-style: italic; margin-bottom: 20px;" data-i18n="quote1">"I got my dream job after 3 months of business English coaching. The interview prep was a game changer!"</p>
+                            <h5>Sarah Jenkins</h5>
+                            <small data-i18n="role1">Marketing Director</small>
+                        </div>
+                    </div>
+                    <div class="slide" style="min-width: 100%; padding: 20px;">
+                        <div class="testimonial-card glass" style="padding: 40px; border-radius: 24px; text-align: center;">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px; border: 3px solid var(--primary);">
+                            <div class="stars" style="color: #F59E0B; margin-bottom: 15px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="quote" style="font-size: 1.1rem; font-style: italic; margin-bottom: 20px;" data-i18n="quote2">"The best teacher I've ever had. Patient, clear, and very funny. Classes are the highlight of my week."</p>
+                            <h5>Miguel Rodriguez</h5>
+                            <small data-i18n="role2">Software Engineer</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="video-intro" class="section-padding">
+        <div class="container">
+            <div class="section-header reveal">
+                <h4 class="gradient-text" data-i18n="intro_heading">Introduction</h4>
+                <h2 data-i18n="intro_title">Watch & Learn</h2>
+            </div>
+            
+            <div class="reveal" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 800px; margin: 0 auto 80px; border-radius: 20px; box-shadow: var(--shadow-soft);">
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #000; display: flex; align-items: center; justify-content: center;">
+                   <i class="fas fa-play-circle" style="font-size: 5rem; color: white; opacity: 0.8; cursor: pointer;"></i>
+                </div>
+            </div>
+
+            <div class="section-header reveal">
+                <h2 data-i18n="faq_title">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-container reveal" style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item" style="margin-bottom: 15px; border-radius: 16px; overflow: hidden; background: var(--bg-glass); border: 1px solid var(--border-glass);">
+                    <div class="faq-question" style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600;">
+                        <span data-i18n="faq1_q">How do online lessons work?</span> <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: 0.4s; padding: 0 20px; color: var(--text-muted);">
+                        <p style="padding-bottom: 20px;" data-i18n="faq1_a">We use Zoom or Google Meet. I share my screen with materials, and we use a virtual whiteboard. You receive a PDF summary after every class.</p>
+                    </div>
+                </div>
+                <div class="faq-item" style="margin-bottom: 15px; border-radius: 16px; overflow: hidden; background: var(--bg-glass); border: 1px solid var(--border-glass);">
+                    <div class="faq-question" style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600;">
+                        <span data-i18n="faq2_q">Can I cancel a lesson?</span> <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: 0.4s; padding: 0 20px; color: var(--text-muted);">
+                        <p style="padding-bottom: 20px;" data-i18n="faq2_a">Yes, you can reschedule or cancel up to 24 hours before the lesson start time without any penalty.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding" style="background: var(--bg-body);">
+        <div class="container">
+            <div class="section-header reveal">
+                <h4 class="gradient-text" data-i18n="contact_heading">Contact</h4>
+                <h2 data-i18n="contact_title">Get In Touch</h2>
+            </div>
+            
+            <div class="contact-wrapper reveal">
+                <div class="contact-info">
+                    <div>
+                        <h3 data-i18n="contact_sub">Let's start your journey</h3>
+                        <p data-i18n="contact_desc">Fill out the form or reach out directly. I usually reply within 24 hours.</p>
+                        <br>
+                        <div class="contact-item" style="display: flex; gap: 15px; align-items: center; margin-bottom: 20px;"><i class="fas fa-envelope"></i>test@test.com</div>
+                        <div class="contact-item" style="display: flex; gap: 15px; align-items: center; margin-bottom: 20px;"><i class="fas fa-phone"></i> +212 0674131847</div>
+                    </div>
+                    
+                    <div class="social-links" style="display: flex; gap: 15px; margin-top: 30px;">
+                        <a href="#" class="social-btn" style="width: 40px; height: 40px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-btn" style="width: 40px; height: 40px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form" style="padding: 50px;">
+                    <form id="bookingForm" onsubmit="return false;">
+                        <div class="form-group" style="position: relative; margin-bottom: 25px;">
+                            <input type="text" class="form-control" id="name" style="width: 100%; padding: 15px 10px; background: transparent; border: none; border-bottom: 2px solid rgba(0,0,0,0.1); outline: none; color: var(--text-main);" required>
+                            <label class="form-label" for="name" data-i18n="form_name">Full Name</label>
+                        </div>
+                        <div class="form-group" style="position: relative; margin-bottom: 25px;">
+                            <input type="email" class="form-control" id="email" style="width: 100%; padding: 15px 10px; background: transparent; border: none; border-bottom: 2px solid rgba(0,0,0,0.1); outline: none; color: var(--text-main);" required>
+                            <label class="form-label" for="email" data-i18n="form_email">Email Address</label>
+                        </div>
+                        <div class="form-group" style="position: relative; margin-bottom: 25px;">
+                            <input type="text" class="form-control" id="message" style="width: 100%; padding: 15px 10px; background: transparent; border: none; border-bottom: 2px solid rgba(0,0,0,0.1); outline: none; color: var(--text-main);" required>
+                            <label class="form-label" for="message" data-i18n="form_message">Message</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="form_send">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="color: white; margin-bottom: 20px; display: inline-block;">
+                        <i class="fas fa-graduation-cap"></i> <span data-i18n="logo">EnglishPro</span>
+                    </a>
+                    <p style="color: #94A3B8;" data-i18n="footer_desc">Empowering students worldwide to achieve fluency and confidence through personalized coaching.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer_links">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home" data-i18n="nav_home">Home</a></li>
+                        <li><a href="#about" data-i18n="nav_about">About</a></li>
+                        <li><a href="#services" data-i18n="nav_services">Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer_legal">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" data-i18n="legal_privacy">Privacy Policy</a></li>
+                        <li><a href="#" data-i18n="legal_terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright" style="text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: #64748B;">
+                &copy; 2024 EnglishPro. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <a href="#" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // --- Translations Object ---
+        const translations = {
+            en: {
+                logo: "EnglishPro",
+                nav_home: "Home",
+                nav_about: "About",
+                nav_services: "Services",
+                nav_pricing: "Pricing",
+                nav_contact: "Contact",
+                hero_title: "Speak English with <br><span class='typing-text'></span>",
+                hero_subtitle: "Unlock your potential with personalized English lessons designed to boost your confidence and career globally.",
+                btn_book: "Book a Lesson",
+                btn_trial: "Free Trial",
+                about_heading: "About Me",
+                about_title: "Your Partner in Language Mastery",
+                about_desc: "I am a certified TEFL teacher specializing in Business English and Conversational fluency. My methodology focuses on real-world application, ensuring you don't just learn rules, but learn to communicate effectively.",
+                exp_years: "Years Experience",
+                stat_students: "Students",
+                stat_countries: "Countries",
+                stat_success: "Success",
+                skill_speaking: "Speaking",
+                skill_business: "Business English",
+                skill_exam: "IELTS Prep",
+                services_heading: "Services",
+                services_title: "How I Can Help You",
+                serv1_title: "Conversation Practice",
+                serv1_desc: "Improve your fluency and reduce accent with guided daily conversations.",
+                serv2_title: "Business English",
+                serv2_desc: "Master email writing, presentations, and corporate vocabulary.",
+                serv3_title: "Exam Preparation",
+                serv3_desc: "Strategic coaching for IELTS, TOEFL, and Cambridge exams.",
+                serv4_title: "Kids Classes",
+                serv4_desc: "Fun and interactive sessions designed specifically for young learners.",
+                pricing_heading: "Pricing",
+                pricing_title: "Choose Your Plan",
+                plan1_name: "Trial",
+                per_lesson: "/lesson",
+                plan1_f1: "45 Minute Lesson",
+                plan1_f2: "Assessment",
+                plan1_f3: "Basic Materials",
+                btn_book_now: "Book Now",
+                badge_popular: "Most Popular",
+                plan2_name: "Standard",
+                per_10lessons: "/10 lessons",
+                plan2_f1: "60 Minute Lessons",
+                plan2_f2: "Custom Curriculum",
+                plan2_f3: "Homework Checks",
+                plan2_f4: "Recording Access",
+                btn_start: "Start Learning",
+                plan3_name: "Intensive",
+                per_20lessons: "/20 lessons",
+                plan3_f1: "Priority Scheduling",
+                plan3_f2: "24/7 WhatsApp Support",
+                plan3_f3: "Business Edit Service",
+                plan3_f4: "Progress Reports",
+                btn_premium: "Go Premium",
+                testi_heading: "Testimonials",
+                testi_title: "Student Stories",
+                quote1: '"I got my dream job after 3 months of business English coaching. The interview prep was a game changer!"',
+                role1: "Marketing Director",
+                quote2: '"The best teacher I;ve ever had. Patient, clear, and very funny.',
+                role2: "Software Engineer",
+                intro_heading: "Introduction",
+                intro_title: "Watch & Learn",
+                faq_title: "Frequently Asked Questions",
+                faq1_q: "How do online lessons work?",
+                faq1_a: "We use Zoom or Google Meet. I share my screen with materials, and we use a virtual whiteboard. You receive a PDF summary after every class.",
+                faq2_q: "Can I cancel a lesson?",
+                faq2_a: "Yes, you can reschedule or cancel up to 24 hours before the lesson start time without any penalty.",
+                contact_heading: "Contact",
+                contact_title: "Get In Touch",
+                contact_sub: "Let's start your journey",
+                contact_desc: "Fill out the form or reach out directly. I usually reply within 24 hours.",
+                form_name: "Full Name",
+                form_email: "Email Address",
+                form_message: "Message",
+                form_send: "Send Message",
+                footer_desc: "Empowering students worldwide to achieve fluency and confidence through personalized coaching.",
+                footer_links: "Quick Links",
+                footer_legal: "Legal",
+                legal_privacy: "Privacy Policy",
+                legal_terms: "Terms of Service"
+            },
+            fr: {
+                logo: "AnglaisPro",
+                nav_home: "Accueil",
+                nav_about: "À Propos",
+                nav_services: "Services",
+                nav_pricing: "Tarifs",
+                nav_contact: "Contact",
+                hero_title: "Parlez anglais avec <br><span class='typing-text'></span>",
+                hero_subtitle: "Libérez votre potentiel avec des cours d'anglais personnalisés conçus pour booster votre confiance et votre carrière.",
+                btn_book: "Réserver un cours",
+                btn_trial: "Essai gratuit",
+                about_heading: "À Propos",
+                about_title: "Votre partenaire linguistique",
+                about_desc: "Je suis professeur certifié TEFL spécialisé en anglais des affaires. Ma méthodologie se concentre sur l'application concrète pour communiquer efficacement.",
+                exp_years: "Années d'expérience",
+                stat_students: "Étudiants",
+                stat_countries: "Pays",
+                stat_success: "Réussite",
+                skill_speaking: "Expression orale",
+                skill_business: "Anglais des affaires",
+                skill_exam: "Prépa IELTS",
+                services_heading: "Services",
+                services_title: "Comment je peux vous aider",
+                serv1_title: "Conversation",
+                serv1_desc: "Améliorez votre fluidité et réduisez votre accent avec des conversations guidées.",
+                serv2_title: "Anglais des affaires",
+                serv2_desc: "Maîtrisez les e-mails, les présentations et le vocabulaire d'entreprise.",
+                serv3_title: "Préparation aux examens",
+                serv3_desc: "Coaching stratégique pour les examens IELTS, TOEFL et Cambridge.",
+                serv4_title: "Cours pour enfants",
+                serv4_desc: "Sessions amusantes et interactives conçues spécialement pour les jeunes apprenants.",
+                pricing_heading: "Tarifs",
+                pricing_title: "Choisissez votre forfait",
+                plan1_name: "Essai",
+                per_lesson: "/leçon",
+                plan1_f1: "Leçon de 45 minutes",
+                plan1_f2: "Évaluation",
+                plan1_f3: "Matériel de base",
+                btn_book_now: "Réserver",
+                badge_popular: "Plus populaire",
+                plan2_name: "Standard",
+                per_10lessons: "/10 leçons",
+                plan2_f1: "Leçons de 60 minutes",
+                plan2_f2: "Programme personnalisé",
+                plan2_f3: "Correction des devoirs",
+                plan2_f4: "Accès aux enregistrements",
+                btn_start: "Commencer",
+                plan3_name: "Intensif",
+                per_20lessons: "/20 leçons",
+                plan3_f1: "Planification prioritaire",
+                plan3_f2: "Support WhatsApp 24/7",
+                plan3_f3: "Service de correction pro",
+                plan3_f4: "Rapports de progrès",
+                btn_premium: "Passer Premium",
+                testi_heading: "Témoignages",
+                testi_title: "Histoires d'étudiants",
+                quote1: '"J\'ai obtenu le job de mes rêves après 3 mois de coaching. La préparation à l\'entretien a tout changé!"',
+                role1: "Directrice Marketing",
+                quote2: '"Le meilleur prof que j\'ai jamais eu. Patient, clair et très drôle. Les cours sont le moment fort de ma semaine."',
+                role2: "Ingénieur Logiciel",
+                intro_heading: "Introduction",
+                intro_title: "Regardez et Apprenez",
+                faq_title: "Questions Fréquentes",
+                faq1_q: "Comment fonctionnent les cours en ligne?",
+                faq1_a: "Nous utilisons Zoom ou Google Meet. Je partage mon écran avec le matériel et nous utilisons un tableau blanc virtuel.",
+                faq2_q: "Puis-je annuler un cours?",
+                faq2_a: "Oui, vous pouvez reporter ou annuler jusqu'à 24 heures avant le début du cours sans pénalité.",
+                contact_heading: "Contact",
+                contact_title: "Contactez-moi",
+                contact_sub: "Commençons votre voyage",
+                contact_desc: "Remplissez le formulaire ou contactez-moi directement. Je réponds généralement sous 24h.",
+                form_name: "Nom complet",
+                form_email: "Adresse e-mail",
+                form_message: "Message",
+                form_send: "Envoyer le message",
+                footer_desc: "Aider les étudiants du monde entier à atteindre la fluidité et la confiance grâce à un coaching personnalisé.",
+                footer_links: "Liens rapides",
+                footer_legal: "Légal",
+                legal_privacy: "Confidentialité",
+                legal_terms: "Conditions d'utilisation"
+            },
+            ar: {
+                logo: "إنجليش برو",
+                nav_home: "الرئيسية",
+                nav_about: "من أنا",
+                nav_services: "خدماتي",
+                nav_pricing: "الأسعار",
+                nav_contact: "تواصل معي",
+                hero_title: "تحدث الإنجليزية بـ <br><span class='typing-text'></span>",
+                hero_subtitle: "أطلق العنان لإمكاناتك من خلال دروس مخصصة لتعزيز ثقتك بنفسك ومسارك المهني عالمياً.",
+                btn_book: "احجز درساً",
+                btn_trial: "تجربة مجانية",
+                about_heading: "نبذة عني",
+                about_title: "شريكك في إتقان اللغة",
+                about_desc: "أنا مدرس معتمد (TEFL) متخصص في اللغة الإنجليزية للأعمال والمحادثة. تركز منهجيتي على التطبيق العملي لضمان التواصل بفعالية.",
+                exp_years: "سنوات خبرة",
+                stat_students: "طلاب",
+                stat_countries: "دولة",
+                stat_success: "نجاح",
+                skill_speaking: "المحادثة",
+                skill_business: "إنجليزي للأعمال",
+                skill_exam: "تحضير أيلتس",
+                services_heading: "خدماتي",
+                services_title: "كيف يمكنني مساعدتك",
+                serv1_title: "ممارسة المحادثة",
+                serv1_desc: "حسن طلاقتك وقلل من لهجتك من خلال محادثات يومية موجهة.",
+                serv2_title: "الإنجليزية للأعمال",
+                serv2_desc: "أتقن كتابة رسائل البريد الإلكتروني، والعروض التقديمية، والمصطلحات المؤسسية.",
+                serv3_title: "التحضير للامتحانات",
+                serv3_desc: "تدريب استراتيجي لاختبارات IELTS و TOEFL و Cambridge.",
+                serv4_title: "دروس للأطفال",
+                serv4_desc: "جلسات ممتعة وتفاعلية مصممة خصيصاً للمتعلمين الصغار.",
+                pricing_heading: "الأسعار",
+                pricing_title: "اختر خطتك",
+                plan1_name: "تجربة",
+                per_lesson: "/درس",
+                plan1_f1: "درس 45 دقيقة",
+                plan1_f2: "تقييم المستوى",
+                plan1_f3: "مواد أساسية",
+                btn_book_now: "احجز الآن",
+                badge_popular: "الأكثر طلباً",
+                plan2_name: "قياسي",
+                per_10lessons: "/10 دروس",
+                plan2_f1: "دروس 60 دقيقة",
+                plan2_f2: "منهج مخصص",
+                plan2_f3: "مراجعة الواجبات",
+                plan2_f4: "تسجيل الدروس",
+                btn_start: "ابدأ التعلم",
+                plan3_name: "مكثف",
+                per_20lessons: "/20 درس",
+                plan3_f1: "أولوية الحجز",
+                plan3_f2: "دعم واتساب 24/7",
+                plan3_f3: "تدقيق لغوي للأعمال",
+                plan3_f4: "تقارير التقدم",
+                btn_premium: "اشتراك مميز",
+                testi_heading: "آراء الطلاب",
+                testi_title: "قصص نجاح",
+                quote1: '"حصلت على وظيفة أحلامي بعد 3 أشهر من التدريب. كان التحضير للمقابلة نقطة تحول!"',
+                role1: "مديرة تسويق",
+                quote2: '"أفضل معلم مر علي. صبور، واضح، ومرح جداً. الدروس هي أفضل وقت في أسبوعي."',
+                role2: "مهندس برمجيات",
+                intro_heading: "مقدمة",
+                intro_title: "شاهد وتعلم",
+                faq_title: "أسئلة شائعة",
+                faq1_q: "كيف تتم الدروس عبر الإنترنت؟",
+                faq1_a: "نستخدم Zoom أو Google Meet. أشارك شاشتي مع المواد ونستخدم سبورة بيضاء افتراضية.",
+                faq2_q: "هل يمكنني إلغاء الدرس؟",
+                faq2_a: "نعم، يمكنك إعادة الجدولة أو الإلغاء قبل 24 ساعة من موعد الدرس دون أي رسوم.",
+                contact_heading: "تواصل معي",
+                contact_title: "لنبدأ الرحلة",
+                contact_sub: "ابدأ رحلتك التعليمية",
+                contact_desc: "املأ النموذج أو تواصل معي مباشرة. عادة ما أرد خلال 24 ساعة.",
+                form_name: "الاسم الكامل",
+                form_email: "البريد الإلكتروني",
+                form_message: "الرسالة",
+                form_send: "إرسال الرسالة",
+                footer_desc: "تمكين الطلاب في جميع أنحاء العالم من تحقيق الطلاقة والثقة من خلال التدريب الشخصي.",
+                footer_links: "روابط سريعة",
+                footer_legal: "قانوني",
+                legal_privacy: "سياسة الخصوصية",
+                legal_terms: "شروط الخدمة"
+            }
+        };
+
+        const typingWords = {
+            en: ["Confidence", "Fluency", "Precision", "Ease"],
+            fr: ["Confiance", "Fluidité", "Précision", "Facilité"],
+            ar: ["ثقة", "طلاقة", "دقة", "سهولة"]
+        };
+
+        let currentLang = 'en';
+
+        // Function to Switch Language
+        function changeLanguage(lang) {
+            currentLang = lang;
+            const doc = document.documentElement;
+            const elements = document.querySelectorAll('[data-i18n]');
+            
+            // Set Direction and Lang Attribute
+            if (lang === 'ar') {
+                doc.setAttribute('dir', 'rtl');
+                doc.setAttribute('lang', 'ar');
+            } else {
+                doc.setAttribute('dir', 'ltr');
+                doc.setAttribute('lang', lang);
+            }
+
+            // Update Text Content
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    // Preserve HTML tags if needed (for hero title)
+                    if (el.innerHTML.includes('<')) {
+                        const spinnerSpan = el.querySelector('span'); // Keep the spinner span
+                        if(spinnerSpan) {
+                            el.innerHTML = translations[lang][key].replace('<span class=\'typing-text\'></span>', spinnerSpan.outerHTML);
+                            // Re-select the new span to ensure typing effect targets it
+                            const newSpinner = el.querySelector('.typing-text');
+                            if(newSpinner) newSpinner.innerText = '';
+                        } else {
+                             el.innerHTML = translations[lang][key];
+                        }
+                    } else {
+                        el.innerText = translations[lang][key];
+                    }
+                }
+            });
+
+            // Update Label in Navbar
+            document.getElementById('current-lang').innerText = lang.toUpperCase();
+
+            // Restart Typing Effect with new language words
+            isDeleting = false;
+            wordIndex = 0;
+            charIndex = 0;
+            // Note: type() function will pick up the new words array based on currentLang
+        }
+
+        // --- Dark Mode Toggle ---
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = body.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                body.removeAttribute('data-theme');
+                icon.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                icon.classList.replace('fa-moon', 'fa-sun');
+            }
+        });
+
+        // --- Navigation Scroll Effect ---
+        const navbar = document.getElementById('navbar');
+        const scrollProgress = document.getElementById('scroll-progress');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            scrollProgress.style.width = scrolled + "%";
+
+            const scrollTopBtn = document.getElementById('scrollTop');
+            if (window.scrollY > 500) scrollTopBtn.classList.add('visible');
+            else scrollTopBtn.classList.remove('visible');
+        });
+
+        document.getElementById('scrollTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // --- Mobile Menu ---
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        const links = document.querySelectorAll('.nav-link');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.querySelector('i').classList.toggle('fa-bars');
+            hamburger.querySelector('i').classList.toggle('fa-times');
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.querySelector('i').classList.add('fa-bars');
+                hamburger.querySelector('i').classList.remove('fa-times');
+            });
+        });
+
+        // --- Typing Effect ---
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const typingElement = document.querySelector('.typing-text');
+            if(!typingElement) return;
+
+            const currentWords = typingWords[currentLang];
+            const currentWord = currentWords[wordIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 100 : 200;
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                isDeleting = true;
+                typeSpeed = 2000;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % currentWords.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        document.addEventListener('DOMContentLoaded', type);
+
+        // --- Scroll Reveal & Counters ---
+        const revealElements = document.querySelectorAll('.reveal');
+        const counters = document.querySelectorAll('.stat-count');
+        let counterStarted = false;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    if (entry.target.contains(counters[0]) && !counterStarted) {
+                        startCounters();
+                        counterStarted = true;
+                    }
+                }
+            });
+        }, { threshold: 0.15 });
+
+        revealElements.forEach(el => observer.observe(el));
+
+        function startCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const increment = target / 50;
+                const updateCounter = () => {
+                    const c = +counter.innerText;
+                    if (c < target) {
+                        counter.innerText = Math.ceil(c + increment);
+                        setTimeout(updateCounter, 30);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCounter();
+            });
+        }
+
+        // --- Slider & FAQ ---
+        const track = document.getElementById('slider-track');
+        let slideIndex = 0;
+        setInterval(() => {
+            slideIndex = (slideIndex + 1) % 2; // Assuming 2 slides for simplicity
+            // Fix for RTL slider direction if needed, but standard translate usually works fine visually
+            track.style.transform = `translateX(-${slideIndex * 100}%)`; 
+        }, 5000);
+
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.querySelector('.faq-question').addEventListener('click', () => {
+                item.classList.toggle('active');
+                const answer = item.querySelector('.faq-answer');
+                if (item.classList.contains('active')) answer.style.maxHeight = answer.scrollHeight + "px";
+                else answer.style.maxHeight = null;
+            });
+        });
+
+    </script>
+</body>
+</html>
